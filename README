@@ -1,0 +1,36 @@
+Merge Sort algoritmasının aşamalarını ve Big-O analizini açıklayacağım.
+
+### [16,21,11,8,12,22] Dizisinin Merge Sort Aşamaları:
+
+```
+                [16,21,11,8,12,22]
+                /              \
+        [16,21,11]          [8,12,22]
+        /         \          /        \
+    [16]    [21,11]      [8]     [12,22]
+     |      /     \       |       /     \
+    [16]  [21]   [11]    [8]   [12]   [22]
+     |      \     /       |       \     /
+    [16]    [11,21]      [8]     [12,22]
+        \         /          \        /
+        [11,16,21]          [8,12,22]
+                \              /
+            [8,11,12,16,21,22]
+```
+
+### Açıklama:
+1. İlk olarak dizi iki eşit parçaya bölünür
+2. Alt diziler tekrar bölünmeye devam eder
+3. Tek elemanlı diziler elde edilince birleştirme işlemi başlar
+4. Birleştirme sırasında elemanlar sıralı şekilde birleştirilir
+5. Son adımda tamamen sıralanmış dizi elde edilir
+
+### Big-O Gösterimi:
+* Merge Sort'un zaman karmaşıklığı her durum için (en iyi, ortalama ve en kötü): **O(n log n)**'dir.
+
+### Neden O(n log n)?
+* Diziyi bölme işlemi log n kere gerçekleşir (her seferinde ikiye böldüğümüz için)
+* Her seviyede birleştirme işlemi için n işlem yapılır
+* Toplam karmaşıklık = O(n) * O(log n) = O(n log n)
+
+Bu algoritma, büyük veri setleri için Quick Sort ile birlikte en verimli sıralama algoritmalarından biridir.
